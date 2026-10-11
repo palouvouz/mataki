@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mataki - οθόνη IP κάμερας με ESP32-S3</title>
+  <!-- Σύνδεσε εδώ το δικό σου CSS από το repository σου, π.χ.: -->
+  <!-- <link rel="stylesheet" href="https://.../style.css"> -->
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Mataki</h1>
+      <p>Μετατρέπει την οθόνη Waveshare ESP32-S3 Touch 4.3&Prime; σε οθόνη για την IP κάμερα του σπιτιού.</p>
+    </header>
+
+    <section id="what">
+      <h2>Τι κάνει</h2>
+      <p>Συνδέεται στο Wi-Fi, ανοίγει το MJPEG stream της κάμερας στο τοπικό δίκτυο, το αποκωδικοποιεί πάνω στο ESP32-S3 και το δείχνει σε πλήρη οθόνη 800&times;480.</p>
+      <ul>
+        <li>Ζωντανή εικόνα, με πάντα το πιο πρόσφατο καρέ</li>
+        <li>Άγγιγμα για μπάρα ελέγχου: κατάσταση, fps και κουμπί Reconnect</li>
+        <li>Αυτόματη επανασύνδεση σε Wi-Fi ή stream που χάθηκε</li>
+        <li>Κωδικοί σε ξεχωριστό αρχείο, που δεν ανεβαίνει ποτέ στο GitHub</li>
+      </ul>
+    </section>
+
+    <section id="hardware">
+      <h2>Τι χρειάζεται</h2>
+      <ul>
+        <li>Waveshare ESP32-S3-Touch-LCD-4.3</li>
+        <li>IP κάμερα με MJPEG stream και HTTP Basic login</li>
+        <li>Wi-Fi 2.4 GHz</li>
+        <li>Arduino IDE 2 με το πακέτο esp32 3.1.x, βιβλιοθήκες lvgl 8.3.x και JPEGDEC για το build</li>
+      </ul>
+    </section>
+
+    <section id="flash">
+      <h2>Εγκατάσταση από release</h2>
+      <p>Κατέβασε το <code>mataki-full.bin</code> από τα Releases και τρέξε:</p>
+      <pre><code id="flash-cmd">python -m esptool --chip esp32s3 write_flash 0x0 mataki-full.bin</code></pre>
+      <button type="button" data-copy="flash-cmd">Αντιγραφή εντολής</button>
+    </section>
+
+    <section id="credits">
+      <h2>Ποιος το έφτιαξε</h2>
+      <p>Η ιδέα είναι δική μου. Vibe coded με την Anthropic (Claude), debugged με την OpenAI.</p>
+    </section>
+  </main>
+
+  <script src="app-description.js" defer></script>
+</body>
+</html>
